@@ -1,0 +1,174 @@
+{
+  "EDITOR_STATE": {
+    "allProjectFiles": {
+      "783135f4-3f15-4905-8269-253ddf792e02": {
+        "id": "783135f4-3f15-4905-8269-253ddf792e02",
+        "parent": null,
+        "name": "sampleindu123",
+        "type": "DIRECTORY",
+        "isDirectory": true,
+        "children": [
+          "40557f3a-05ce-494f-bbb5-4cb66a75c0bd",
+          "f9016a82-b0ab-4fea-82af-40eef6febe2d",
+          "99b4560b-b9e0-4298-98ea-0fff65de1e8c"
+        ],
+        "isRemovable": false,
+        "filePath": "sampleindu123"
+      },
+      "40557f3a-05ce-494f-bbb5-4cb66a75c0bd": {
+        "id": "40557f3a-05ce-494f-bbb5-4cb66a75c0bd",
+        "parent": "783135f4-3f15-4905-8269-253ddf792e02",
+        "name": "lambda.js",
+        "type": "JS_LAMBDA",
+        "isDirectory": false,
+        "children": [],
+        "isRemovable": true,
+        "filePath": "sampleindu123/lambda.js",
+        "code": "let AWS = require('aws-sdk');\nconst ml = new AWS.MachineLearning();\n\nexports.handler = async (event) => {\n    ml.predict({\n        MLModelId: 'ml-dmP3nLjN2S9',\n        PredictEndpoint: 'https://realtime.machinelearning.us-east-1.amazonaws.com',\n        Record: {\n            test: 10\n        }\n    }, function (err, data) {\n        if (err) console.log(err, err.stack); // an error occurred\n        else console.log(data);           // successful response\n    });\n\n    return { \"message\": \"Successfully executed\" };\n};",
+        "config": {
+          "runtime": "nodejs10.x",
+          "handler": "handler",
+          "timeout": 60,
+          "memory": 128,
+          "layers": []
+        },
+        "triggers": []
+      },
+      "f9016a82-b0ab-4fea-82af-40eef6febe2d": {
+        "id": "f9016a82-b0ab-4fea-82af-40eef6febe2d",
+        "parent": "783135f4-3f15-4905-8269-253ddf792e02",
+        "name": "pythn.py",
+        "type": "PYTHON_LAMBDA",
+        "isDirectory": false,
+        "children": [],
+        "isRemovable": true,
+        "filePath": "sampleindu123/pythn.py",
+        "code": "def handler(event, context):\n    \n    return {\"message\": \"Successfully executed with pythn\"}\n",
+        "config": {
+          "runtime": "python2.7",
+          "handler": "handler",
+          "timeout": 60,
+          "memory": 128,
+          "layers": []
+        },
+        "triggers": [
+          {
+            "resourceName": "apigusEast1sachithraAPInameget",
+            "config": {}
+          }
+        ],
+        "testCases": {
+          "a13bb578-26f3-4d7a-946c-25de595bdf0a": {
+            "id": "a13bb578-26f3-4d7a-946c-25de595bdf0a",
+            "name": "Test event",
+            "functionId": "f9016a82-b0ab-4fea-82af-40eef6febe2d",
+            "event": "{\r\n    \"key1\": \"value1\",\r\n    \"key2\": \"value2\",\r\n    \"key3\": \"value3\"\r\n}",
+            "eventTemplate": "hello-world"
+          }
+        }
+      },
+      "99b4560b-b9e0-4298-98ea-0fff65de1e8c": {
+        "id": "99b4560b-b9e0-4298-98ea-0fff65de1e8c",
+        "parent": "783135f4-3f15-4905-8269-253ddf792e02",
+        "name": "__init__.py",
+        "type": "PYTHON_FILE",
+        "isDirectory": false,
+        "children": [],
+        "isRemovable": true,
+        "filePath": "sampleindu123/__init__.py",
+        "code": ""
+      }
+    },
+    "rootNode": "783135f4-3f15-4905-8269-253ddf792e02",
+    "openFiles": [
+      "40557f3a-05ce-494f-bbb5-4cb66a75c0bd",
+      "f9016a82-b0ab-4fea-82af-40eef6febe2d"
+    ],
+    "currentFileId": "40557f3a-05ce-494f-bbb5-4cb66a75c0bd",
+    "resources": {
+      "apigusEast1sachithraAPInameget": {
+        "name": "apigusEast1sachithraAPInameget",
+        "type": "API_GATEWAY",
+        "config": {
+          "selectedRegion": "us-east-1",
+          "apiMode": 1,
+          "apiName": "sachithraAPIname",
+          "apiId": "052p9kjn18",
+          "endpointType": "REGIONAL",
+          "rootResourceId": "zrjp6rdv3b",
+          "existingResources": {
+            "/": "zrjp6rdv3b"
+          },
+          "resourceMode": 1,
+          "resourcePath": "/",
+          "resourceName": "",
+          "resourceId": "zrjp6rdv3b",
+          "restMethod": "GET",
+          "proxyIntegration": false,
+          "enableCORS": false,
+          "stageMode": 1,
+          "stageName": "Test",
+          "stageDeploymentId": "v7ihwk",
+          "mode": 1
+        }
+      },
+      "ml-ml-dmP3nLjN2S9": {
+        "name": "ml-ml-dmP3nLjN2S9",
+        "type": "MachineLearning",
+        "config": {
+          "MLModelId": "ml-dmP3nLjN2S9",
+          "projectRegion": "us-east-1"
+        }
+      }
+    },
+    "customTemplate": {
+      "dialect": null,
+      "definitions": null
+    },
+    "envVariables": [
+      {
+        "lambdaId": "all",
+        "varKey": "SIGMA_AWS_ACC_ID",
+        "varValue": null,
+        "shouldPersist": false,
+        "displayOnly": false,
+        "editable": false
+      },
+      {
+        "lambdaId": "f9016a82-b0ab-4fea-82af-40eef6febe2d",
+        "varKey": "PYTHONPATH",
+        "varValue": "/var/runtime:/var/task/sampleindu123",
+        "shouldPersist": true,
+        "displayOnly": false,
+        "editable": true
+      }
+    ],
+    "packageJSON": {
+      "dependencies": {
+        "aws-sdk": {
+          "name": "aws-sdk",
+          "language": "javascript",
+          "version": "2.176.0",
+          "dev": true,
+          "notRemovable": false
+        }
+      }
+    }
+  },
+  "PROJECT_META": {
+    "projectName": "sampleindu123",
+    "projectDescription": "",
+    "projectVersion": "1.0.0",
+    "projectRegion": "us-east-1",
+    "platform": "AWS",
+    "platformRegions": {},
+    "lastSave": 1576578596319
+  },
+  "VCS_STATE": {
+    "provider": "GitHub",
+    "repo": {
+      "name": "sampleindu123",
+      "url": "https://github.com/Indunil1992/sampleindu123"
+    }
+  }
+}
