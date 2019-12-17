@@ -24,7 +24,7 @@
         "children": [],
         "isRemovable": true,
         "filePath": "sampleindu123/lambda.js",
-        "code": "let AWS = require('aws-sdk');\nconst ml = new AWS.MachineLearning();\n\nexports.handler = async (event) => {\n    ml.predict({\n        MLModelId: 'ml-dmP3nLjN2S9',\n        PredictEndpoint: 'https://realtime.machinelearning.us-east-1.amazonaws.com',\n        Record: {\n            test: 10\n        }\n    }, function (err, data) {\n        if (err) console.log(err, err.stack); // an error occurred\n        else console.log(data);           // successful response\n    });\n\n    return { \"message\": \"Successfully executed\" };\n};",
+        "code": "let AWS = require('aws-sdk');\nconst ml = new AWS.MachineLearning();\n\nexports.handler = async (event) => {\n    ml.predict({\n        MLModelId: 'ml-dmP3nLjN2S9',\n        PredictEndpoint: 'https://realtime.machinelearning.us-east-1.amazonaws.com',\n        Record: {\n            admin: 10\n        }\n    }, function (err, data) {\n        if (err) console.log(err, err.stack); // an error occurred\n        else console.log(data);           // successful response\n    });\n\n    return { \"message\": \"Successfully executed\" };\n};",
         "config": {
           "runtime": "nodejs10.x",
           "handler": "handler",
@@ -162,7 +162,7 @@
     "projectRegion": "us-east-1",
     "platform": "AWS",
     "platformRegions": {},
-    "lastSave": 1576578596319
+    "lastSave": 1576579238966
   },
   "VCS_STATE": {
     "provider": "GitHub",

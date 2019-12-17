@@ -6,7 +6,7 @@ exports.handler = async (event) => {
         MLModelId: 'ml-dmP3nLjN2S9',
         PredictEndpoint: 'https://realtime.machinelearning.us-east-1.amazonaws.com',
         Record: {
-            test: 10
+            admin: 10
         }
     }, function (err, data) {
         if (err) console.log(err, err.stack); // an error occurred
